@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <nav class = log>
+        <ul>
+            <li ><a href="{{ url_for('auth.sign_up') }}" >Sign-Up</a></li>
+            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            <li ><a href="{{ url_for('views.notes') }}" >notes</a></li>
+ 
+        </ul>
+    </nav>
+
+    
+
+    <header>
+        <h1>Kenzi Anteur</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('views.home') }}">Home</a></li>
+            <li><a href="">Portfolio</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Add information about yourself here.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <!-- Add a contact form or contact information here -->
+    </section>
+
+    <footer>
+        <p>VOILA LE FOOTER</p>
+    </footer>
+</body>
+</html>

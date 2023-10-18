@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Sign-Up - Your Portfolio{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <section class="login-section">
+        <h2>Sign-Up</h2>
+        <form method="POST" action="/sign-up">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            
+            <label for="password1">Password:</label>
+            <input type="password1" id="password1" name="password1" placeholder="Enter Password" required>
+            
+            <label for="password2">Confirm Password:</label>
+            <input type="password2" id="password" name="password2" placeholder="confirm Password" required>
+            
+            <input type="submit" value="Sign-Up" class="cta-button">
+        </form>
+    </section>
+</div>
+
+
+{% endblock %}

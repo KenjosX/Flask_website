@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Your Notes{% endblock %}
+
+{% block content %}
+
+
+<section id="portfolio">
+
+    <h2>you can saves your notes in here</h2>
+
+    <ul>
+        {% for note in user_notes %}
+            <li>{{ note.data }}</li>
+        {% endfor %}
+    </ul>
+    
+    <form method="POST" action="/notes">
+        <label for="note">enter your note:</label>
+        <input type="text" id="note" name="note">
+        <input type="submit" value="Submit note">
+    </form>
+    
+
+</section>
+
+
+{% endblock %}
